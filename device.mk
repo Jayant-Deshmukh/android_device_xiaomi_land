@@ -423,3 +423,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Inherit proprietary files
 $(call inherit-product-if-exists, vendor/xiaomi/land/land-vendor.mk)
+
+# Configs
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/configs/apns-conf.xml:system/etc/apns-conf.xml 
