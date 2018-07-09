@@ -664,7 +664,8 @@ typedef struct {
         if (NULL != META_PTR_NAME) \
 
 #define ADD_SET_PARAM_ENTRY_TO_BATCH(TABLE_PTR, META_ID, DATA) \
-    ((NULL != TABLE_PTR) ? \
+    ((NULL != TABLE_PTR || META_ID != CAM_INTF_META_CDS_DATA || \
+            META_ID != CAM_INTF_PARM_TEMPORAL_DENOISE) ? \
     ((TABLE_PTR->data.member_variable_##META_ID[ 0 ] = DATA), \
     (TABLE_PTR->is_valid[META_ID] = 1), (0)) : \
     ((LOGE("Unable to set metadata TABLE_PTR:%p META_ID:%d", \
